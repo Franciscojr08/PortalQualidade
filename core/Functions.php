@@ -1,0 +1,117 @@
+<?php
+
+namespace PortalQualidade\Core;
+
+/**
+ * Class Functions
+ * @package PortalQualidade\Core
+ * @version 1.0.0
+ */
+class Functions {
+
+	/**
+	 * Renderiza o menu
+	 *
+	 * @author Francisco Santos franciscojuniordh@gmail.com
+	 * @return void
+	 *
+	 * @since 1.0.0 - Definição do versionamento da classe
+	 */
+	public static function renderMenu(): void {
+		require_once "sistema/nav.php";
+	}
+
+	/**
+	 * Renderiza o footer
+	 *
+	 * @author Francisco Santos franciscojuniordh@gmail.com
+	 * @return void
+	 *
+	 * @since 1.0.0 - Definição do versionamento da classe
+	 */
+	public static function renderFooter(): void {
+		require_once "sistema/footer.php";
+	}
+
+	/**
+	 * Adiciona o css na página
+	 *
+	 * @param array|null $aCss
+	 * @author Francisco Santos franciscojuniordh@gmail.com
+	 * @return void
+	 *
+	 * @since 1.0.0 - Definição do versionamento da classe
+	 */
+	public static function addStyleSheet(array $aCss = null): void {
+		$oData = new \DateTimeImmutable("now");
+		$sTimeStamp = $oData->getTimestamp();
+
+		$aCssPadrao = [
+			"css/bootstrap/bootstrap.min.css",
+			"css/fontawesome/all.min.css"
+		];
+
+		$aCss = array_merge($aCssPadrao,$aCss);
+
+		foreach ($aCss as $sCss) {
+			echo "<link rel='stylesheet' href='../public/assets/$sCss?$sTimeStamp'>" . PHP_EOL;
+		}
+	}
+
+	/**
+	 * Adiciona o js na página
+	 *
+	 * @param array|null $aScript
+	 * @author Francisco Santos franciscojuniordh@gmail.com
+	 * @return void
+	 *
+	 * @since 1.0.0 - Definição do versionamento da classe
+	 */
+	public static function addScript(array $aScript = null): void {
+		$oData = new \DateTimeImmutable("now");
+		$sTimeStamp = $oData->getTimestamp();
+
+		$aJsPadrao = [
+			"js/jquery/jquery-3.6.4.js",
+			"js/bootstrap/bootstrap.bundle.min.js",
+			"js/fontawesome/all.min.js",
+		];
+
+		$aJs = array_merge($aJsPadrao,$aScript);
+
+		foreach ($aJs as $sJs) {
+			echo "<script type='text/javascript' src='../public/assets/$sJs?$sTimeStamp'></script>" . PHP_EOL;
+		}
+	}
+
+	/**
+	 * Adiciona o Favicon
+	 *
+	 * @author Francisco Santos franciscojuniordh@gmail.com
+	 * @return void
+	 *
+	 * @since 1.0.0 - Definição do versionamento da classe
+	 */
+	public static function addFavicon(): void {
+		echo "<link rel=\"shortcut icon\" href=\"../public/assets/img/favicon.png\">";
+	}
+
+	/**
+	 * Adiciona uma imagem na página
+	 *
+	 * @param string $sNomeImagem
+	 * @param string $sFormato
+	 * @param string|null $sAlt
+	 * @author Francisco Santos franciscojuniordh@gmail.com
+	 * @return void
+	 *
+	 * @since 1.0.0 - Definição do versionamento da classe
+	 */
+	public static function addImage(string $sNomeImagem, string $sFormato, string $sAlt = null): void {
+		$oData = new \DateTimeImmutable("now");
+		$sTimeStamp = $oData->getTimestamp();
+
+		echo "<img src='../public/assets/img/$sNomeImagem.$sFormato?$sTimeStamp'  alt='$sAlt'>";
+	}
+
+}

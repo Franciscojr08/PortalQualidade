@@ -1,0 +1,23 @@
+{
+  "name": "portal/qualidade",
+  "description": "Portal da Qualidade",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Carrara Group Tech",
+      "email": "franciscojuniordh@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PortalQualidade\\Src\\": "src/",
+      "PortalQualidade\\Core\\": "core/"
+    }
+  },
+  "require": {
+    "ext-mbstring": "*",
+    "ext-pdo": "*",
+    "phpmailer/phpmailer": "^6.5"
+  }
+}
