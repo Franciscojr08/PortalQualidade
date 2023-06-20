@@ -18,7 +18,7 @@ class Functions {
 	 * @since 1.0.0 - Definição do versionamento da classe
 	 */
 	public static function renderMenu(): void {
-		require_once "sistema/nav.php";
+		require_once "Sistema/nav.php";
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Functions {
 	 * @since 1.0.0 - Definição do versionamento da classe
 	 */
 	public static function renderFooter(): void {
-		require_once "sistema/footer.php";
+		require_once "Sistema/footer.php";
 	}
 
 	/**
@@ -47,8 +47,8 @@ class Functions {
 		$sTimeStamp = $oData->getTimestamp();
 
 		$aCssPadrao = [
-			"css/bootstrap/bootstrap.min.css",
-			"css/fontawesome/all.min.css"
+			"css/lib/bootstrap/bootstrap.min.css",
+			"css/lib/fontawesome/all.min.css"
 		];
 
 		$aCss = array_merge($aCssPadrao,$aCss);
@@ -72,9 +72,9 @@ class Functions {
 		$sTimeStamp = $oData->getTimestamp();
 
 		$aJsPadrao = [
-			"js/jquery/jquery-3.6.4.js",
-			"js/bootstrap/bootstrap.bundle.min.js",
-			"js/fontawesome/all.min.js",
+			"js/lib/jquery/jquery-3.6.4.js",
+			"js/lib/bootstrap/bootstrap.bundle.min.js",
+			"js/lib/fontawesome/all.min.js",
 		];
 
 		$aJs = array_merge($aJsPadrao,$aScript);
