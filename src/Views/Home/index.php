@@ -20,8 +20,6 @@ use PortalQualidade\Core\Functions;
 <body>
 <?php Functions::renderMenu(); ?>
 
-
 <?php Functions::addScript(["js/Sistema/sistema.js"]); ?>
-
 </body>
 </html>
