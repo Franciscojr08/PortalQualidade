@@ -36,13 +36,13 @@ class Functions {
 	/**
 	 * Adiciona o css na página
 	 *
-	 * @param array|null $aCss
+	 * @param array $aCss
 	 * @author Francisco Santos franciscojuniordh@gmail.com
 	 * @return void
 	 *
 	 * @since 1.0.0 - Definição do versionamento da classe
 	 */
-	public static function addStyleSheet(array $aCss = null): void {
+	public static function addStyleSheet(array $aCss = []): void {
 		$oData = new \DateTimeImmutable("now");
 		$sTimeStamp = $oData->getTimestamp();
 
@@ -54,20 +54,20 @@ class Functions {
 		$aCss = array_merge($aCssPadrao,$aCss);
 
 		foreach ($aCss as $sCss) {
-			echo "<link rel='stylesheet' href='../public/assets/$sCss?$sTimeStamp'>" . PHP_EOL;
+			echo PHP_EOL . "<link rel='stylesheet' href='../public/assets/$sCss?$sTimeStamp'>";
 		}
 	}
 
 	/**
 	 * Adiciona o js na página
 	 *
-	 * @param array|null $aScript
+	 * @param array $aScript
 	 * @author Francisco Santos franciscojuniordh@gmail.com
 	 * @return void
 	 *
 	 * @since 1.0.0 - Definição do versionamento da classe
 	 */
-	public static function addScript(array $aScript = null): void {
+	public static function addScript(array $aScript = []): void {
 		$oData = new \DateTimeImmutable("now");
 		$sTimeStamp = $oData->getTimestamp();
 
@@ -80,7 +80,7 @@ class Functions {
 		$aJs = array_merge($aJsPadrao,$aScript);
 
 		foreach ($aJs as $sJs) {
-			echo "<script type='text/javascript' src='../public/assets/$sJs?$sTimeStamp'></script>" . PHP_EOL;
+			echo PHP_EOL . "<script type='text/javascript' src='../public/assets/$sJs?$sTimeStamp'></script>";
 		}
 	}
 
@@ -101,17 +101,18 @@ class Functions {
 	 *
 	 * @param string $sNomeImagem
 	 * @param string $sFormato
+	 * @param string $sLink
 	 * @param string|null $sAlt
 	 * @author Francisco Santos franciscojuniordh@gmail.com
 	 * @return void
 	 *
 	 * @since 1.0.0 - Definição do versionamento da classe
 	 */
-	public static function addImage(string $sNomeImagem, string $sFormato, string $sAlt = null): void {
+	public static function addImage(string $sNomeImagem, string $sFormato, string $sLink, string $sAlt = null): void {
 		$oData = new \DateTimeImmutable("now");
 		$sTimeStamp = $oData->getTimestamp();
 
-		echo "<img src='../public/assets/img/$sNomeImagem.$sFormato?$sTimeStamp'  alt='$sAlt'>";
+		echo "<a href=\"$sLink\"><img src='../public/assets/img/$sNomeImagem.$sFormato?$sTimeStamp'  alt='$sAlt'></a>";
 	}
 
 }
