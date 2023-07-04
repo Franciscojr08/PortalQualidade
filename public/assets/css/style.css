@@ -1,14 +1,14 @@
 nav {
     background-color: #282b36;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 nav img {
     width: 10rem;
     height: 4rem;
-    padding: 10px;
+    padding: 6px;
 }
 
 nav ul {
@@ -64,4 +64,13 @@ nav ul li ul li a {
     /*min-width: 180px;*/
     line-height: 40px;
     /*font-weight: inherit;*/
+}
+
+.nav_footer img {
+    padding: 0!important;
+}
+
+.nav_footer a {
+    text-decoration: none;
+    color: #fff;
 }

@@ -19,7 +19,10 @@ use PortalQualidade\Core\Functions;
 </head>
 <body>
 <?php Functions::renderMenu(); ?>
-
+<br>
+<!--Implementar home-->
+<br>
+<?php Functions::renderFooter(); ?>
 <?php Functions::addScript(["js/Sistema/sistema.js"]); ?>
 </body>
 </html>
